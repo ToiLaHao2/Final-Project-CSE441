@@ -21,7 +21,7 @@ import Register from './screens/Register';
 
 function App(): React.JSX.Element {
   return (
-    <Register/>
+    <Login/>
   );
 }
 

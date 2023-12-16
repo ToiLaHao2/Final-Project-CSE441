@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {TextInput, Button} from 'react-native-paper';
 import 'react-native-vector-icons';
 import * as React from 'react';
@@ -42,13 +42,14 @@ const Register = () => {
               {dob.getDate()}/{dob.getMonth() + 1}/{dob.getFullYear()}
             </Text>
             <Button
-              mode="outlined"
               style={styles.dateIcon}
-              onPress={() => setOpen(true)}>
+              onPress={() => setOpen(true)}
+              icon="calendar-account">
               <DatePicker
                 modal
                 open={open}
                 date={dob}
+                mode="date"
                 onConfirm={date => {
                   setOpen(false);
                   setDOB(date);
@@ -79,9 +80,9 @@ const Register = () => {
         </Button>
         <View style={{alignItems: 'center', padding: 10}}>
           <Text style={{color: '#0171A3', marginTop: 10, marginBottom: 10}}>
-            or you already have an account{' '}
+            or you already have an account
           </Text>
-          <Button icon="camera" mode="outlined"></Button>
+          <Button icon="keyboard-return" mode="outlined"/>
         </View>
       </View>
     </View>
@@ -103,7 +104,6 @@ const styles = StyleSheet.create({
   },
   tagTitle: {
     color: '#418AAA',
-    marginLeft: 10,
     fontSize: 20,
     fontWeight: 'bold',
   },
@@ -111,12 +111,15 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   dateIcon: {
+    borderRadius: 10,
+    borderWidth: 1,
     width: 50,
-    height: 50,
+    height: 40,
   },
   textInput: {
     width: 300,
     marginBottom: 20,
+    marginLeft: 10,
     backgroundColor: 'white',
     borderBottomWidth: 1,
     color: '#418AAA',

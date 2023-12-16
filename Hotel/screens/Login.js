@@ -39,7 +39,7 @@ const Login = () => {
           secureTextEntry={hidePass ? true : false}
           right={
             <TextInput.Icon
-              icon={hidePass ? 'visibility' : 'visibility_off'}
+              icon={hidePass ? 'eye-off-outline' : 'eye-outline'}
               onPress={() => setHidePass(!hidePass)}
             />
           }
