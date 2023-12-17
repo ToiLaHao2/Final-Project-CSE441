@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "435964313511",
+    "project_id": "hotelhao-8083e",
+    "storage_bucket": "hotelhao-8083e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435964313511:android:14462910e1e5e1065fc082",
+        "android_client_info": {
+          "package_name": "com.hotel"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCe-gdI1YRw_ucexV_Z4lj3coMyzOIRkIc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

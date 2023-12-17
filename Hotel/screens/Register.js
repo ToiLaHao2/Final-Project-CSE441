@@ -4,7 +4,6 @@ import {TextInput, Button} from 'react-native-paper';
 import 'react-native-vector-icons';
 import * as React from 'react';
 import DatePicker from 'react-native-date-picker';
-import {Icon} from 'react-native-vector-icons/MaterialIcons';
 
 const Register = () => {
   const [name, setName] = useState('');
@@ -94,7 +93,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
   },
   title: {
-    color: '#418AAA',
+    color: '#19a3ff',
     fontSize: 30,
     fontWeight: 'bold',
     textAlign: 'center',
@@ -103,7 +102,7 @@ const styles = StyleSheet.create({
     paddingRight: 10,
   },
   tagTitle: {
-    color: '#418AAA',
+    color: '#00eeff',
     fontSize: 20,
     fontWeight: 'bold',
   },
@@ -132,7 +131,7 @@ const styles = StyleSheet.create({
   },
   button: {
     height: 50,
-    backgroundColor: '#0171A3',
+    backgroundColor: '#19a3ff',
     borderWidth: 0,
     borderRadius: 10,
     justifyContent: 'center',

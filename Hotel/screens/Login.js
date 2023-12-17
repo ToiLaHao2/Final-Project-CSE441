@@ -50,10 +50,10 @@ const Login = () => {
           style={styles.button}>
           <Text style={{color: 'white', fontSize: 18}}> Login </Text>
         </Button>
+        <Text style={{color: '#0171A3', marginTop: 10, marginBottom: 10,textAlign:'center'}}>
+          or
+        </Text>
         <TouchableOpacity style={{alignItems: 'center', padding: 10}}>
-          <Text style={{color: '#0171A3', marginTop: 10, marginBottom: 10}}>
-            or{' '}
-          </Text>
           <Text style={styles.register}>Sign up now</Text>
         </TouchableOpacity>
       </View>
@@ -66,14 +66,14 @@ const styles = StyleSheet.create({
     marginHorizontal: 40,
   },
   welcome: {
-    color: '#419AAA',
+    color: '#19a3ff',
     fontSize: 50,
     fontWeight: '600',
     textAlign: 'center',
     marginBottom: 50,
   },
   textTitle: {
-    color: '#418AAA',
+    color: '#19a3ff',
     fontSize: 40,
     fontWeight: '400',
     textAlign: 'center',
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
   },
   button: {
     height: 50,
-    backgroundColor: '#0171A3',
+    backgroundColor: '#19a3ff',
     borderRadius: 10,
     justifyContent: 'center',
   },

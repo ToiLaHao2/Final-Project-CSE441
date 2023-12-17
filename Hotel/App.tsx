@@ -18,10 +18,14 @@ import {
 } from 'react-native';
 import Login from './screens/Login';
 import Register from './screens/Register';
+import Homepage from './screens/Homepage';
+import Navigator from './Navigator';
+import BookingForm from './screens/BookingForm';
+import Room from './screens/Room';
 
 function App(): React.JSX.Element {
   return (
-    <Login/>
+    <Room/>
   );
 }
 
