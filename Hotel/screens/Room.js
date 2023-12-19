@@ -2,7 +2,13 @@ import {Pressable, ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {Icon} from 'react-native-paper';
 
-const Room = () => {
+
+
+function Room () {
+
+  
+
+
   return (
     <View style={styles.container}>
       <ScrollView>

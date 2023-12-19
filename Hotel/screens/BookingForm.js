@@ -6,10 +6,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 const BookingForm = () => {
   const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
   const [roomNumber, setRoomNumber] = useState('');
   const [arrivalDate, setArrivalDate] = useState('');
-  const [arrivalTime, setArrivalTime] = useState('');
   const [livingDays, setLivingDays] = useState('');
   const [date, setDate] = useState(new Date());
   const [open, setOpen] = useState(false);
@@ -21,7 +19,6 @@ const BookingForm = () => {
   return (
     <View style={styles.container}>
       <Text style={{color: 'black'}}>Name</Text>
-      <Text style={{color: 'black'}}>Email</Text>
       <Text style={{color: 'black'}}>Room Number</Text>
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
         <Text style={{color: 'black'}}>

@@ -40,7 +40,7 @@ const Homepage = () => {
           <ImageBackground
             resizeMode="cover"
             style={styles.roomImage}
-            source={{uri: 'https://legacy.reactjs.org/logo-og.png'}}>
+            source={{uri: 'https://www.chicagoriverhotel.com/wp-content/uploads/sites/9/2017/06/1513-SUITE_CQ_WACKER_0122_White-No-Pattern.jpg?ch=Width,DPR'}}>
             <View
               style={{
                 flexDirection: 'row',
@@ -61,7 +61,7 @@ const Homepage = () => {
           <ImageBackground
             resizeMode="cover"
             style={styles.roomImage}
-            source={{uri: 'https://legacy.reactjs.org/logo-og.png'}}>
+            source={{uri: 'https://bhgp.bayviewhotels.com/wp-content/uploads/sites/177/2017/09/Superior-Room-King.jpg'}}>
             <View
               style={{
                 flexDirection: 'row',
@@ -84,7 +84,7 @@ const Homepage = () => {
           <ImageBackground
             resizeMode="cover"
             style={styles.roomImage}
-            source={{uri: 'https://legacy.reactjs.org/logo-og.png'}}>
+            source={{uri: 'https://www.theghotel.ie/wp-content/uploads/2020/09/Deluxe-Room.jpg'}}>
             <View
               style={{
                 flexDirection: 'row',
@@ -105,7 +105,7 @@ const Homepage = () => {
           <ImageBackground
             resizeMode="cover"
             style={styles.roomImage}
-            source={{uri: 'https://legacy.reactjs.org/logo-og.png'}}>
+            source={{uri: 'https://cdn.marriottnetwork.com/uploads/sites/24/2021/02/canyon-suites-scottsdale-luxury-collection-king-bedroom.jpg'}}>
             <View
               style={{
                 flexDirection: 'row',

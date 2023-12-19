@@ -1,18 +1,46 @@
 import {useState} from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {
+  Alert,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {TextInput, Button} from 'react-native-paper';
 import 'react-native-vector-icons';
 import * as React from 'react';
 import DatePicker from 'react-native-date-picker';
+import {FIREBASE_AUTH} from '../FirebaseConfig';
+import {createUserWithEmailAndPassword} from 'firebase/auth';
+
 
 const Register = () => {
   const [name, setName] = useState('');
   const [dob, setDOB] = useState(new Date());
   const [ssn, setSSN] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [open, setOpen] = useState(false);
 
+  const auth = FIREBASE_AUTH;
+
+  const register = async () => {
+    try {
+      const response = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password,
+      );
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+      Alert('Signup failed' + error.message);
+    }
+  };
+
   return (
-    <View style={{backgroundColor: 'white', flex: 1}}>
+    <ScrollView style={{backgroundColor: 'white', flex: 1}}>
       <View style={{marginTop: 40}}>
         <Text style={styles.title}>Create new account</Text>
       </View>
@@ -71,9 +99,29 @@ const Register = () => {
             style={styles.textInput}
           />
         </View>
+        <View style={styles.tagBox}>
+          <Text style={styles.tagTitle}>
+            Email <Text style={{color: 'red'}}>*</Text>
+          </Text>
+          <TextInput
+            value={email}
+            onChangeText={text => setEmail(text)}
+            style={styles.textInput}
+          />
+        </View>
+        <View style={styles.tagBox}>
+          <Text style={styles.tagTitle}>
+            Password <Text style={{color: 'red'}}>*</Text>
+          </Text>
+          <TextInput
+            value={password}
+            onChangeText={text => setPassword(text)}
+            style={styles.textInput}
+          />
+        </View>
         <Button
           mode="contained"
-          // onPress={() => authentication()}
+          onPress={() => register()}
           style={styles.button}>
           <Text style={{color: 'white', fontSize: 18}}> Confirm </Text>
         </Button>
@@ -81,10 +129,14 @@ const Register = () => {
           <Text style={{color: '#0171A3', marginTop: 10, marginBottom: 10}}>
             or you already have an account
           </Text>
-          <Button icon="keyboard-return" mode="outlined"/>
+          <Button
+            icon="keyboard-return"
+            mode="outlined"
+         //   onPress={() => this.setState({screen: 'Login'})}
+          />
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
