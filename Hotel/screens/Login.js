@@ -1,17 +1,19 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {Button, TextInput} from 'react-native-paper';
 import {FIREBASE_AUTH} from '../FirebaseConfig';
 import {signInWithEmailAndPassword} from 'firebase/auth';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {MenuProvider} from 'react-native-popup-menu';
-import Navigator1 from './MainNavigator';
+import Register from './Register';
+import Homepage from './Homepage';
 
-const Login = () => {
+function Login({navigation}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [hidePass, setHidePass] = useState(true);
   const [logined, setLogined] = useState(false);
+  const [userdata, setUserdata] = useState([]);
   const auth = FIREBASE_AUTH;
 
   const authentication = async () => {
@@ -22,17 +24,14 @@ const Login = () => {
     } catch (error) {
       console.log(error);
     }
+    if (logined) {
+      navigation.navigate('HomeScreen');
+    }
   };
 
-  if (logined) {
-    return (
-      <SafeAreaProvider>
-        <MenuProvider>
-          <Navigator1 />
-        </MenuProvider>
-      </SafeAreaProvider>
-    );
-  } else
+  useEffect(()=>{
+
+  })
     return (
       <View
         style={{backgroundColor: 'white', flex: 1, justifyContent: 'center'}}>
@@ -79,14 +78,13 @@ const Login = () => {
           </Text>
           <TouchableOpacity
             style={{alignItems: 'center', padding: 10}}
-            // onPress={() => this.setState({})}
-          >
+            onPress={() => navigation.navigate('Register')}>
             <Text style={styles.register}>Sign up now</Text>
           </TouchableOpacity>
         </View>
       </View>
     );
-};
+}
 
 const styles = StyleSheet.create({
   container: {

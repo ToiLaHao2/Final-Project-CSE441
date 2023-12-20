@@ -8,9 +8,9 @@ import {
 import React, {useLayoutEffect} from 'react';
 import {Icon, TextInput} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
-const Homepage = () => {
-  const navigation = useNavigation();
+function Homepage({navigation}) {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: true,
@@ -31,101 +31,111 @@ const Homepage = () => {
   }, []);
 
   return (
-    <View style={styles.container}>
-      <View style={styles.midView}>
-        <Text style={styles.user}>Hello, User</Text>
+    <SafeAreaProvider>
+      <View style={styles.container}>
+        <View style={styles.midView}>
+          <Text style={styles.user}>Hello, User</Text>
+        </View>
+        <View style={styles.roomList}>
+          <View style={styles.room}>
+            <ImageBackground
+              resizeMode="cover"
+              style={styles.roomImage}
+              source={{
+                uri: 'https://www.chicagoriverhotel.com/wp-content/uploads/sites/9/2017/06/1513-SUITE_CQ_WACKER_0122_White-No-Pattern.jpg?ch=Width,DPR',
+              }}>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                }}>
+                <Text style={{color: '#19a3ff', fontSize: 20, marginLeft: 5}}>
+                  Standard
+                </Text>
+                <Icon source="chevron-right" size={30} color="#19a3ff" />
+              </View>
+            </ImageBackground>
+            <TouchableOpacity style={styles.tButton}>
+              <Text style={styles.status}>Book now</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.room}>
+            <ImageBackground
+              resizeMode="cover"
+              style={styles.roomImage}
+              source={{
+                uri: 'https://bhgp.bayviewhotels.com/wp-content/uploads/sites/177/2017/09/Superior-Room-King.jpg',
+              }}>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                }}>
+                <Text style={{color: '#19a3ff', fontSize: 20, marginLeft: 5}}>
+                  Superior
+                </Text>
+                <Icon source="chevron-right" size={30} color="#19a3ff" />
+              </View>
+            </ImageBackground>
+            <TouchableOpacity style={styles.tButton}>
+              <Text style={styles.status}>Book now</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View style={styles.roomList}>
+          <View style={styles.room}>
+            <ImageBackground
+              resizeMode="cover"
+              style={styles.roomImage}
+              source={{
+                uri: 'https://www.theghotel.ie/wp-content/uploads/2020/09/Deluxe-Room.jpg',
+              }}>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                }}>
+                <Text style={{color: '#19a3ff', fontSize: 20, marginLeft: 5}}>
+                  Deluxe
+                </Text>
+                <Icon source="chevron-right" size={30} color="#19a3ff" />
+              </View>
+            </ImageBackground>
+            <TouchableOpacity style={styles.tButton}>
+              <Text style={styles.status}>Book now</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.room}>
+            <ImageBackground
+              resizeMode="cover"
+              style={styles.roomImage}
+              source={{
+                uri: 'https://cdn.marriottnetwork.com/uploads/sites/24/2021/02/canyon-suites-scottsdale-luxury-collection-king-bedroom.jpg',
+              }}>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                }}>
+                <Text style={{color: '#19a3ff', fontSize: 20, marginLeft: 5}}>
+                  Suite
+                </Text>
+                <Icon source="chevron-right" size={30} color="#19a3ff" />
+              </View>
+            </ImageBackground>
+            <TouchableOpacity style={styles.tButton}>
+              <Text style={styles.status}>Book now</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
       </View>
-      <View style={styles.roomList}>
-        <View style={styles.room}>
-          <ImageBackground
-            resizeMode="cover"
-            style={styles.roomImage}
-            source={{uri: 'https://www.chicagoriverhotel.com/wp-content/uploads/sites/9/2017/06/1513-SUITE_CQ_WACKER_0122_White-No-Pattern.jpg?ch=Width,DPR'}}>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-              }}>
-              <Text style={{color: '#19a3ff', fontSize: 20, marginLeft: 5}}>
-                Standard
-              </Text>
-              <Icon source="chevron-right" size={30} color="#19a3ff" />
-            </View>
-          </ImageBackground>
-          <TouchableOpacity style={styles.tButton}>
-            <Text style={styles.status}>Book now</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.room}>
-          <ImageBackground
-            resizeMode="cover"
-            style={styles.roomImage}
-            source={{uri: 'https://bhgp.bayviewhotels.com/wp-content/uploads/sites/177/2017/09/Superior-Room-King.jpg'}}>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-              }}>
-              <Text style={{color: '#19a3ff', fontSize: 20, marginLeft: 5}}>
-                Superior
-              </Text>
-              <Icon source="chevron-right" size={30} color="#19a3ff" />
-            </View>
-          </ImageBackground>
-          <TouchableOpacity style={styles.tButton}>
-            <Text style={styles.status}>Book now</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-      <View style={styles.roomList}>
-        <View style={styles.room}>
-          <ImageBackground
-            resizeMode="cover"
-            style={styles.roomImage}
-            source={{uri: 'https://www.theghotel.ie/wp-content/uploads/2020/09/Deluxe-Room.jpg'}}>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-              }}>
-              <Text style={{color: '#19a3ff', fontSize: 20, marginLeft: 5}}>
-                Deluxe
-              </Text>
-              <Icon source="chevron-right" size={30} color="#19a3ff" />
-            </View>
-          </ImageBackground>
-          <TouchableOpacity style={styles.tButton}>
-            <Text style={styles.status}>Book now</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.room}>
-          <ImageBackground
-            resizeMode="cover"
-            style={styles.roomImage}
-            source={{uri: 'https://cdn.marriottnetwork.com/uploads/sites/24/2021/02/canyon-suites-scottsdale-luxury-collection-king-bedroom.jpg'}}>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-              }}>
-              <Text style={{color: '#19a3ff', fontSize: 20, marginLeft: 5}}>
-                Suite
-              </Text>
-              <Icon source="chevron-right" size={30} color="#19a3ff" />
-            </View>
-          </ImageBackground>
-          <TouchableOpacity style={styles.tButton}>
-            <Text style={styles.status}>Book now</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    </View>
+    </SafeAreaProvider>
   );
-};
+}
 
 export default Homepage;
 

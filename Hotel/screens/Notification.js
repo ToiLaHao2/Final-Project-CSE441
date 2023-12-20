@@ -4,15 +4,14 @@ import {useNavigation} from '@react-navigation/native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {Icon} from 'react-native-paper';
 
-const Notification = () => {
-  const navigation = useNavigation();
-  useLayoutEffect
+function Notification({navigation}) {
+  useLayoutEffect;
   return (
     <View>
       <Text style={{color: 'black'}}>Notification</Text>
     </View>
   );
-};
+}
 
 export default Notification;
 

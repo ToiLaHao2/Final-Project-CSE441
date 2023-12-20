@@ -4,7 +4,7 @@ import {Icon} from 'react-native-paper';
 
 
 
-function Room () {
+function Room ({navigation}) {
 
   
 

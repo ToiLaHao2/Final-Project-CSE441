@@ -1,14 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import {StyleSheet, Text, View} from 'react-native';
+import React from 'react';
 
-const EditUser = () => {
+function EditUser({navigation}) {
   return (
     <View>
       <Text>EditUser</Text>
     </View>
-  )
+  );
 }
 
-export default EditUser
+export default EditUser;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

@@ -1,14 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import {StyleSheet, Text, View} from 'react-native';
+import React from 'react';
 
-const FinalConfirmBooking = () => {
+function FinalConfirmBooking({navigation}) {
   return (
     <View>
       <Text>FinalConfirmBooking</Text>
     </View>
-  )
+  );
 }
 
-export default FinalConfirmBooking
+export default FinalConfirmBooking;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

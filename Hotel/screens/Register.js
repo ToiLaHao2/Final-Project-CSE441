@@ -14,14 +14,14 @@ import DatePicker from 'react-native-date-picker';
 import {FIREBASE_AUTH} from '../FirebaseConfig';
 import {createUserWithEmailAndPassword} from 'firebase/auth';
 
-
-const Register = () => {
+function Register({navigation}) {
   const [name, setName] = useState('');
   const [dob, setDOB] = useState(new Date());
   const [ssn, setSSN] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [open, setOpen] = useState(false);
+  const [regis, setRegis] = useState('false');
 
   const auth = FIREBASE_AUTH;
 
@@ -33,9 +33,14 @@ const Register = () => {
         password,
       );
       console.log(response);
+      setRegis('true');
     } catch (error) {
       console.log(error);
       Alert('Signup failed' + error.message);
+    }
+
+    if (regis) {
+      navigation.navigate('HomeScreen');
     }
   };
 
@@ -132,13 +137,13 @@ const Register = () => {
           <Button
             icon="keyboard-return"
             mode="outlined"
-         //   onPress={() => this.setState({screen: 'Login'})}
+            onPress={navigation.goBack()}
           />
         </View>
       </View>
     </ScrollView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {

@@ -4,7 +4,7 @@ import {Button, TextInput} from 'react-native-paper';
 import DatePicker from 'react-native-date-picker';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const BookingForm = () => {
+function BookingForm({navigation}) {
   const [name, setName] = useState('');
   const [roomNumber, setRoomNumber] = useState('');
   const [arrivalDate, setArrivalDate] = useState('');
@@ -49,7 +49,7 @@ const BookingForm = () => {
       </Button>
     </View>
   );
-};
+}
 
 export default BookingForm;
 
