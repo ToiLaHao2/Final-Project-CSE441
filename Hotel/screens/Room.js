@@ -12,7 +12,7 @@ function Room ({navigation}) {
   return (
     <View style={styles.container}>
       <ScrollView>
-       
+       <Text style={{color:'black'}}>Hello</Text>
       </ScrollView>
     </View>
   );

@@ -21,10 +21,12 @@ import FinalConfirmBooking from './screens/FinalConfirmBooking';
 import Notification from './screens/Notification';
 import User from './screens/User';
 import RoomDetail from './screens/RoomDetail';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 function App(): React.JSX.Element {
   const [islogin, setIslogin] = useState('');
   const [trigger, setTrigger] = useState(false);
+  const Tab = createBottomTabNavigator();
 
   const getislogin = async () => {
     try {
@@ -55,7 +57,13 @@ function App(): React.JSX.Element {
             component={Login}
           />
           <Stack.Screen
-            name="RoomScreen"
+            name="RegisterPage"
+            options={{headerShown: false}}
+            component={Register}
+          />
+          
+          <Stack.Screen
+            name="RoomList"
             options={{headerShown: false}}
             component={Room}
           />
@@ -78,11 +86,6 @@ function App(): React.JSX.Element {
             name="FinalConfirmScreen"
             options={{headerShown: false}}
             component={FinalConfirmBooking}
-          />
-          <Stack.Screen
-            name="Register"
-            options={{headerShown: false}}
-            component={Register}
           />
           <Stack.Screen
             name="NotitficationScreen"

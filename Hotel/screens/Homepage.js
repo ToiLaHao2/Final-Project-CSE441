@@ -56,7 +56,7 @@ function Homepage({navigation}) {
                 <Icon source="chevron-right" size={30} color="#19a3ff" />
               </View>
             </ImageBackground>
-            <TouchableOpacity style={styles.tButton}>
+            <TouchableOpacity style={styles.tButton} onPress={()=>navigation.navigate('RoomList')}>
               <Text style={styles.status}>Book now</Text>
             </TouchableOpacity>
           </View>

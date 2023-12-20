@@ -11,8 +11,9 @@ import {TextInput, Button} from 'react-native-paper';
 import 'react-native-vector-icons';
 import * as React from 'react';
 import DatePicker from 'react-native-date-picker';
-import {FIREBASE_AUTH} from '../FirebaseConfig';
+import {FIREBASE_AUTH, FIREBASE_DB} from '../FirebaseConfig';
 import {createUserWithEmailAndPassword} from 'firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 
 function Register({navigation}) {
   const [name, setName] = useState('');
@@ -24,6 +25,7 @@ function Register({navigation}) {
   const [regis, setRegis] = useState('false');
 
   const auth = FIREBASE_AUTH;
+  const db = FIREBASE_DB;
 
   const register = async () => {
     try {
@@ -36,13 +38,35 @@ function Register({navigation}) {
       setRegis('true');
     } catch (error) {
       console.log(error);
-      Alert('Signup failed' + error.message);
+      setMessage(error.message);
     }
-
     if (regis) {
       navigation.navigate('HomeScreen');
     }
   };
+
+  async function AddUser() {
+    const id = email;
+    const DOB = dob.toString();
+    try {
+      firestore()
+        .collection('user')
+        .doc(id)
+        .set({
+          SSN: {ssn},
+          dob: {DOB},
+          email: {email},
+          name: {name},
+        })
+        .then(() => {
+          console.log(ssn);
+        });
+      console.log(dob);
+    } catch (error) {
+      Alert(error.message);
+      console.log(error);
+    }
+  }
 
   return (
     <ScrollView style={{backgroundColor: 'white', flex: 1}}>
@@ -137,7 +161,7 @@ function Register({navigation}) {
           <Button
             icon="keyboard-return"
             mode="outlined"
-            onPress={navigation.goBack()}
+            onPress={() => navigation.goBack()}
           />
         </View>
       </View>
